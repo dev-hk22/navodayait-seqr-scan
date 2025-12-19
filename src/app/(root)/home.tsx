@@ -56,7 +56,7 @@ const HomeScreen = ({}: Props) => {
             </CardHeader>
             <CardContent className="gap-2">
               <ScanQrCode
-                className="text-secondary"
+                className="text-primary"
                 // style={{ borderColor: "#eeb114" }}
                 height={"35"}
                 width={"35"}
@@ -78,7 +78,7 @@ const HomeScreen = ({}: Props) => {
                 </CardHeader>
                 <CardContent className="gap-2">
                   <ScanBarcodeIcon
-                    className="text-secondary"
+                    className="text-primary"
                     height={"35"}
                     width={"35"}
                   />
@@ -100,7 +100,7 @@ const HomeScreen = ({}: Props) => {
                   </CardHeader>
                   <CardContent className="gap-2">
                     <ScanBarcodeIcon
-                      className="text-secondary"
+                      className="text-primary"
                       height={"35"}
                       width={"35"}
                     />
@@ -127,7 +127,7 @@ const HomeScreen = ({}: Props) => {
               </CardHeader>
               <CardContent className="gap-2">
                 <FileClockIcon
-                  className="text-secondary"
+                  className="text-primary"
                   height={"35"}
                   width={"35"}
                 />

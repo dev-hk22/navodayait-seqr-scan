@@ -4,63 +4,63 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 267 41% 24%;
+    --background: 0 0% 100%;             /* white */
+    --foreground: 0 0% 0%;               /* black */
 
-    --card: 0 0% 100%;
-    --card-foreground: 267 41% 24%;
+    --card: 0 0% 100%;                   /* white */
+    --card-foreground: 0 0% 0%;          /* black */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 267 41% 24%;
+    --popover: 0 0% 100%;                /* white */
+    --popover-foreground: 0 0% 0%;       /* black */
 
-    --primary: 267 41% 24%;              /* deep purple */
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 0%;                  /* black */
+    --primary-foreground: 0 0% 100%;     /* white */
 
-    --secondary: 44 68% 49%;             /* golden yellow */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;               /* light grey */
+    --secondary-foreground: 0 0% 0%;     /* black */
 
-    --muted: 44 100% 96%;                /* soft gold background */
-    --muted-foreground: 0 12% 22%;       /* dark gray text */
+    --muted: 0 0% 96%;                   /* very light grey */
+    --muted-foreground: 0 0% 45%;        /* medium grey text */
 
-    --accent: 44 68% 49%;                /* golden accent */
-    --accent-foreground: 267 41% 24%;
+    --accent: 0 0% 75%;                  /* grey accent */
+    --accent-foreground: 0 0% 0%;        /* black */
 
     --destructive: 0 75% 45%;            /* red if needed */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 267 41% 24%;
-    --input: 44 68% 95%;
-    --ring: 267 41% 24%;
+    --border: 0 0% 80%;                  /* light grey border */
+    --input: 0 0% 95%;                   /* very light grey input */
+    --ring: 0 0% 0%;                     /* black ring */
   }
 
   .dark:root {
-     --background: 0 0% 100%;
-    --foreground: 267 41% 24%;
+    --background: 0 0% 0%;               /* black */
+    --foreground: 0 0% 100%;             /* white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 267 41% 24%;
+    --card: 0 0% 7%;                     /* dark grey */
+    --card-foreground: 0 0% 100%;        /* white */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 267 41% 24%;
+    --popover: 0 0% 7%;                  /* dark grey */
+    --popover-foreground: 0 0% 100%;     /* white */
 
-    --primary: 267 41% 24%;              /* deep purple */
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 100%;                /* white */
+    --primary-foreground: 0 0% 0%;       /* black */
 
-    --secondary: 44 68% 49%;             /* golden yellow */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;               /* dark grey */
+    --secondary-foreground: 0 0% 100%;   /* white */
 
-    --muted: 44 100% 96%;                /* soft gold background */
-    --muted-foreground: 0 12% 22%;       /* dark gray text */
+    --muted: 0 0% 15%;                   /* dark muted grey */
+    --muted-foreground: 0 0% 70%;        /* light grey text */
 
-    --accent: 44 68% 49%;                /* golden accent */
-    --accent-foreground: 267 41% 24%;
+    --accent: 0 0% 30%;                  /* medium-dark grey accent */
+    --accent-foreground: 0 0% 100%;      /* white */
 
     --destructive: 0 75% 45%;            /* red if needed */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 267 41% 24%;
-    --input: 44 68% 95%;
-    --ring: 267 41% 24%;
+    --border: 0 0% 25%;                  /* grey border */
+    --input: 0 0% 15%;                   /* dark grey input */
+    --ring: 0 0% 100%;                   /* white ring */
   }
 }
 

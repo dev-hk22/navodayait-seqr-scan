@@ -20,6 +20,7 @@ import useUser from "@/hooks/useUser";
 import ForgotPasswordDialog from "@/components/ForgotPasswordDialog";
 import { useToast } from "react-native-toast-notifications";
 import ForgotPasswordModal from "@/components/ForgotPasswordModal";
+import { storage } from "@/utils/storageService";
 
 type Props = {};
 
@@ -100,6 +101,10 @@ const LoginScreen = ({ }: Props) => {
         response.data?.data?.access_token || response.data?.accesstoken
       );
       setUserDetails(response.data?.data);
+      storage.set(
+        "login_type",
+        login_type.toString().toLowerCase()
+      );
       setIsUserLoggedIn(true);
       router.replace("/home");
     } catch (error) {
