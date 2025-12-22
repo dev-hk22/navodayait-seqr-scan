@@ -39,7 +39,9 @@ const MenuModal = () => {
       storage.clearAll();
       setAuthToken(null);
       setIsUserLoggedIn(false);
-      toast.show(response.data?.message || "Logged out successfully");
+      toast.show(response.data?.message || "Logged out successfully",{
+        type: 'success'
+      });
       router.replace("/welcome");
     } catch (error: any) {
       if (axios.isAxiosError(error)) {
