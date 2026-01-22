@@ -144,7 +144,7 @@ const ScanHistoryScreen = ({ }: Props) => {
 
       for (let i = 0; i < response.data?.data?.length; i++) {
         const item = response.data?.data[i];
-        if (item.scan_result === '1') {
+        if (item.scan_result == '1') {
           if (item.document_id !== null) {
             tempSeQRData.push(item);
           }

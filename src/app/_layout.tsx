@@ -18,30 +18,30 @@ if (__DEV__) {
 
 export default function RootLayout() {
 	const colorScheme = Appearance.getColorScheme();
-	// const [appState, setAppState] = useState(AppState.currentState);
+	const [appState, setAppState] = useState(AppState.currentState);
 
-	// useEffect(() => {
-	// 	const handleAppStateChange = (nextAppState: any) => {
-	// 		console.log('AppState change:', nextAppState); // To monitor state changes
-	// 		setAppState(nextAppState);
-	// 	};
+	useEffect(() => {
+		const handleAppStateChange = (nextAppState: any) => {
+			console.log('AppState change:', nextAppState); // To monitor state changes
+			setAppState(nextAppState);
+		};
 
-	// 	const subscription = AppState.addEventListener(
-	// 		'change',
-	// 		handleAppStateChange,
-	// 	);
+		const subscription = AppState.addEventListener(
+			'change',
+			handleAppStateChange,
+		);
 
-	// 	return () => {
-	// 		subscription.remove();
-	// 		// unsubscribe
-	// 	};
-	// }, []);
+		return () => {
+			subscription.remove();
+			// unsubscribe
+		};
+	}, []);
 
-	// useEffect(() => {
-	// 	if (appState === 'active') {
-	// 		getApplicationVersion();
-	// 	}
-	// }, [appState]);
+	useEffect(() => {
+		if (appState === 'active') {
+			getApplicationVersion();
+		}
+	}, [appState]);
 	return (
 		<>
 			<StatusBar
