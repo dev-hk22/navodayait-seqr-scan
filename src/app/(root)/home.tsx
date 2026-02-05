@@ -25,6 +25,7 @@ const HomeScreen = ({}: Props) => {
   const { userDetails } = useUser();
 
   const goToCameraScanner = (scanner_type: BarcodeType) => {
+    
     router.navigate({
       pathname: "/camera",
       params: {
@@ -68,7 +69,7 @@ const HomeScreen = ({}: Props) => {
         {userDetails?.institute_username && (
           <>
             <TouchableOpacity
-              onPress={() => goToCameraScanner("code128")}
+              onPress={() => goToCameraScanner("code39")}
               className="w-[48%]"
             >
               <Card className="w-full">

@@ -92,7 +92,7 @@ const CameraScreen = ({ }: Props) => {
       scannedFormData.append("key", sanitizeBarcodeData);
 
       const response = await axiosInstance.post(
-        scanner_type === "code128"
+        scanner_type === "code39"
           ? SCAN_AUDIT_TRIALS
           : loginType === "verifier"
             ? SCAN_VERIFIER_CERT
@@ -110,7 +110,7 @@ const CameraScreen = ({ }: Props) => {
 
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
-      if (scanner_type === "code128") {
+      if (scanner_type === "code39") {
         router.navigate({
           pathname: "/scan-audit-details",
           params: {
