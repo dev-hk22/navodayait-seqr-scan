@@ -156,14 +156,20 @@ const SignUpScreen = ({}: Props) => {
                     />
                   )}
                 />
-                {errors.userFullName && <Text>This field is required</Text>}
+                {errors.userFullName && <Text className="text-red-600 mt-1">This field is required</Text>}
               </View>
               <View>
                 <Text className="signUpFormText">Email Address</Text>
                 <Controller
                   control={control}
                   name="userEmail"
-                  rules={{ required: true }}
+                  rules={{
+                    required: 'Email is required',
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: 'Enter a valid email address',
+                    },
+                  }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
                       autoCapitalize="none"
@@ -176,24 +182,41 @@ const SignUpScreen = ({}: Props) => {
                     />
                   )}
                 />
+                {errors.userEmail && (
+                  <Text className="text-red-600 mt-1">
+                    {errors.userEmail.message as string}
+                  </Text>
+                )}
               </View>
               <View>
                 <Text className="signUpFormText">Phone Number</Text>
                 <Controller
                   control={control}
                   name="userPhone"
-                  rules={{ required: true }}
+                  rules={{
+                    required: 'Phone number is required',
+                    pattern: {
+                      value: /^\d{10}$/,
+                      message: 'Phone number must be 10 digits',
+                    },
+                  }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
                       className="signUpInputs focus:signUpInputs_Focused"
                       placeholder="Enter your phone number"
                       keyboardType="phone-pad"
+                      maxLength={10}
                       onBlur={onBlur}
-                      onChangeText={onChange}
+                      onChangeText={(text) => onChange(text.replace(/\D/g, ''))}
                       value={value}
                     />
                   )}
                 />
+                {errors.userPhone && (
+                  <Text className="text-red-600 mt-1">
+                    {errors.userPhone.message as string}
+                  </Text>
+                )}
               </View>
               <View>
                 <Text className="signUpFormText">Username</Text>
