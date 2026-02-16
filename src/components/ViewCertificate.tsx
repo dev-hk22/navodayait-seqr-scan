@@ -48,7 +48,7 @@ const ViewCertificate = ({
     });
   }, [width]);
 
-  console.log(scannedResults.pdf_url, "scannedResults.fileUrl");
+  // console.log(scannedResults.pdf_url, "scannedResults.fileUrl");
   
 
   return (

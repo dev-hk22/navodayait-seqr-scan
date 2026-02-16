@@ -59,6 +59,7 @@ const SignUpScreen = ({}: Props) => {
   const {
     control,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<SignUpForm>({
     defaultValues: {
@@ -223,7 +224,7 @@ const SignUpScreen = ({}: Props) => {
                 <Controller
                   control={control}
                   name="userName"
-                  rules={{ required: true }}
+                  rules={{ required: 'Username is required' }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
                       className="signUpInputs focus:signUpInputs_Focused"
@@ -234,13 +235,18 @@ const SignUpScreen = ({}: Props) => {
                     />
                   )}
                 />
+                {errors.userName && (
+                  <Text className="text-red-600 mt-1">
+                    {errors.userName.message as string}
+                  </Text>
+                )}
               </View>
               <View>
                 <Text className="signUpFormText">New Password</Text>
                 <Controller
                   control={control}
                   name="userNewPassword"
-                  rules={{ required: true }}
+                  rules={{ required: 'Password is required' }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
                       className="signUpInputs focus:signUpInputs_Focused"
@@ -251,13 +257,22 @@ const SignUpScreen = ({}: Props) => {
                     />
                   )}
                 />
+                {errors.userNewPassword && (
+                  <Text className="text-red-600 mt-1">
+                    {errors.userNewPassword.message as string}
+                  </Text>
+                )}
               </View>
               <View>
                 <Text className="signUpFormText">Confirm Password</Text>
                 <Controller
                   control={control}
                   name="userConfirmPassword"
-                  rules={{ required: true }}
+                  rules={{
+                    required: 'Confirm password is required',
+                    validate: (value) =>
+                      value === watch('userNewPassword') || 'Passwords do not match',
+                  }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
                       className="signUpInputs focus:signUpInputs_Focused"
@@ -268,6 +283,11 @@ const SignUpScreen = ({}: Props) => {
                     />
                   )}
                 />
+                {errors.userConfirmPassword && (
+                  <Text className="text-red-600 mt-1">
+                    {errors.userConfirmPassword.message as string}
+                  </Text>
+                )}
               </View>
 
               <View className="gap-4">

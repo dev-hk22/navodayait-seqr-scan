@@ -33,8 +33,8 @@ const ScanResultScreen = ({ }: Props) => {
         setActiveTabIndex(index);
         pagerRef.current?.setPage(index);
     };
-    console.log(scanned_results, "scanned_results");
-    console.log(qr_data, "qr_data");
+    // console.log(scanned_results, "scanned_results");
+    // console.log(qr_data, "qr_data");
 
 
     return (

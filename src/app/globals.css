@@ -5,72 +5,79 @@
 
 @layer base {
   :root {
-    /* Light mode */
-    --background: 270 40% 98%;          /* very light lavender */
-    --foreground: 260 25% 15%;          /* deep purple text */
+    /* Light mode (Logo based) */
+    --background: 0 0% 100%;          /* White */
+    --foreground: 222 47% 11%;        /* Dark navy text */
 
     --card: 0 0% 100%;
-    --card-foreground: 260 25% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 260 25% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 270 45% 40%;              /* Raisoni Purple */
+    /* Logo Red */
+    --primary: 354 70% 42%;           /* Deep red */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 45% 70%;             /* Gold */
-    --secondary-foreground: 260 25% 15%;
+    /* Logo Gold */
+    --secondary: 38 80% 55%;          /* Warm gold */
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 270 20% 94%;
-    --muted-foreground: 270 10% 40%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 38 55% 60%;                /* Rich gold accent */
-    --accent-foreground: 260 25% 15%;
+    /* Extra Gold Accent */
+    --accent: 38 90% 60%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 75% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 270 20% 85%;
-    --input: 270 20% 92%;
-    --ring: 270 45% 40%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+
+    /* Logo Blue */
+    --ring: 220 70% 40%;              /* Royal blue */
   }
 
   .dark:root {
-    /* Dark mode */
-    --background: 270 40% 98%;          /* very light lavender */
-    --foreground: 260 25% 15%;          /* deep purple text */
+    /* Dark mode (Logo themed) */
+    --background: 222 47% 8%;         /* Near black */
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 260 25% 15%;
+    --card: 222 47% 11%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 260 25% 15%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 270 45% 40%;              /* Raisoni Purple */
+    --primary: 354 70% 45%;           /* Red stays bold */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 45% 70%;             /* Gold */
-    --secondary-foreground: 260 25% 15%;
+    --secondary: 38 80% 55%;          /* Gold */
+    --secondary-foreground: 222 47% 8%;
 
-    --muted: 270 20% 94%;
-    --muted-foreground: 270 10% 40%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 38 55% 60%;                /* Rich gold accent */
-    --accent-foreground: 260 25% 15%;
+    --accent: 38 90% 60%;
+    --accent-foreground: 222 47% 8%;
 
-    --destructive: 0 75% 45%;
+    --destructive: 0 62% 40%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 270 20% 85%;
-    --input: 270 20% 92%;
-    --ring: 270 45% 40%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+
+    --ring: 220 70% 55%;              /* Blue highlight */
   }
 }
 
 
+
 @layer components {
   .signUpFormText {
-    @apply text-base xs:text-lg font-semibold text-foreground mb-1;
+    @apply text-base xs:text-lg font-semibold text-secondary mb-1;
   }
 
   .signUpInputs {
@@ -78,17 +85,14 @@
            focus:outline-none focus:ring-2 focus:ring-ring;
   }
 
-  .signUpInputs_Focused {
-    @apply border-primary ring-2 ring-primary;
-  }
-
   .primaryButton {
     @apply bg-primary text-primary-foreground
-           hover:opacity-90 transition rounded-lg;
+           hover:brightness-110 transition rounded-lg;
   }
 
   .secondaryButton {
     @apply bg-secondary text-secondary-foreground
-           hover:opacity-90 transition rounded-lg;
+           hover:brightness-110 transition rounded-lg;
   }
 }
+
