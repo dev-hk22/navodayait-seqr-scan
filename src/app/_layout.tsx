@@ -5,12 +5,12 @@ import UserProvider from "@/providers/UserProvider";
 import { ToastProvider } from 'react-native-toast-notifications'
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 
-import "@/app/globals.css";
 import ToastNotification from "@/components/ToastNotification";
 import { Appearance, AppState, StatusBar } from "react-native";
 import { useEffect, useState } from "react";
 import { getApplicationVersion } from "@/libs/utils";
 // ...existing code...
+import "@/app/globals.css";
 
 if (__DEV__) {
 	require("../../ReactotronConfig");
@@ -72,7 +72,7 @@ export default function RootLayout() {
 					</KeyboardProvider>
 				</AuthProvider>
 			</UserProvider >
+			<PortalHost />
 		</>
-		//    <PortalHost />
 	);
 }

@@ -1,98 +1,105 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Light mode (Logo based) */
-    --background: 0 0% 100%;          /* White */
-    --foreground: 222 47% 11%;        /* Dark navy text */
+    /* ===== LIGHT MODE (Logo Based) ===== */
+
+    --background: 0 0% 100%;
+    --foreground: 220 35% 20%;
+    /* Navy text */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 220 35% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 220 35% 20%;
 
-    /* Logo Red */
-    --primary: 354 70% 42%;           /* Deep red */
+    /* Primary = Logo Blue */
+    --primary: 220 35% 20%;
     --primary-foreground: 0 0% 100%;
 
-    /* Logo Gold */
-    --secondary: 38 80% 55%;          /* Warm gold */
-    --secondary-foreground: 222 47% 11%;
+    /* Secondary = Logo Green */
+    --secondary: 122 45% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent = Lighter Green */
+    --accent: 124 55% 60%;
+    --accent-foreground: 220 35% 20%;
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 215 16% 40%;
 
-    /* Extra Gold Accent */
-    --accent: 38 90% 60%;
-    --accent-foreground: 222 47% 11%;
-
-    --destructive: 0 75% 45%;
+    --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
 
-    /* Logo Blue */
-    --ring: 220 70% 40%;              /* Royal blue */
+    /* Focus Ring = Green */
+    --ring: 122 45% 48%;
   }
 
   .dark:root {
-    /* Dark mode (Logo themed) */
-    --background: 222 47% 8%;         /* Near black */
+    /* ===== DARK MODE (Premium Look) ===== */
+
+    --background: 220 35% 10%;
+    /* Dark navy background */
     --foreground: 0 0% 98%;
 
-    --card: 222 47% 11%;
+    --card: 220 35% 14%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 220 35% 14%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 354 70% 45%;           /* Red stays bold */
+    /* Blue stays primary */
+    --primary: 220 35% 25%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 80% 55%;          /* Gold */
-    --secondary-foreground: 222 47% 8%;
+    /* Green pops more in dark */
+    --secondary: 122 50% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --accent: 124 60% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 38 90% 60%;
-    --accent-foreground: 222 47% 8%;
+    --muted: 217 30% 20%;
+    --muted-foreground: 215 20% 70%;
 
-    --destructive: 0 62% 40%;
+    --destructive: 0 60% 40%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
+    --border: 217 30% 20%;
+    --input: 217 30% 20%;
 
-    --ring: 220 70% 55%;              /* Blue highlight */
+    --ring: 122 50% 50%;
   }
 }
-
-
 
 @layer components {
   .signUpFormText {
-    @apply text-base xs:text-lg font-semibold text-secondary mb-1;
+    @apply text-base xs:text-lg font-semibold text-primary mb-1;
   }
 
   .signUpInputs {
-    @apply rounded-lg border border-input bg-background
-           focus:outline-none focus:ring-2 focus:ring-ring;
+    @apply rounded-lg border border-input bg-background px-3 py-2 transition;
   }
 
   .primaryButton {
-    @apply bg-primary text-primary-foreground
-           hover:brightness-110 transition rounded-lg;
+    @apply bg-primary text-primary-foreground hover:brightness-110 active:scale-95 transition duration-200 rounded-lg px-4 py-2 font-medium;
+  }
+
+  .signUpInputs_Focused {
+    @apply border-primary ring-2 ring-primary;
   }
 
   .secondaryButton {
-    @apply bg-secondary text-secondary-foreground
-           hover:brightness-110 transition rounded-lg;
+    @apply bg-secondary text-secondary-foreground hover:brightness-110 active:scale-95 transition duration-200 rounded-lg px-4 py-2 font-medium;
+  }
+
+  .accentButton {
+    @apply bg-accent text-accent-foreground hover:brightness-110 transition rounded-lg px-4 py-2 font-medium;
   }
 }
-

@@ -148,7 +148,7 @@ const SignUpScreen = ({}: Props) => {
                   rules={{ required: true }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
-                      className="signUpInputs focus:signUpInputs_Focused"
+                      className="signUpInputs"
                       placeholder="Enter your full name"
                       keyboardType="default"
                       onBlur={onBlur}
@@ -174,7 +174,7 @@ const SignUpScreen = ({}: Props) => {
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
                       autoCapitalize="none"
-                      className="signUpInputs focus:signUpInputs_Focused"
+                      className="signUpInputs "
                       placeholder="Enter your email"
                       keyboardType="email-address"
                       onBlur={onBlur}
@@ -203,7 +203,7 @@ const SignUpScreen = ({}: Props) => {
                   }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
-                      className="signUpInputs focus:signUpInputs_Focused"
+                      className="signUpInputs "
                       placeholder="Enter your phone number"
                       keyboardType="phone-pad"
                       maxLength={10}
@@ -227,7 +227,7 @@ const SignUpScreen = ({}: Props) => {
                   rules={{ required: 'Username is required' }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
-                      className="signUpInputs focus:signUpInputs_Focused"
+                      className="signUpInputs "
                       placeholder="Enter your username"
                       onBlur={onBlur}
                       onChangeText={onChange}
@@ -249,7 +249,7 @@ const SignUpScreen = ({}: Props) => {
                   rules={{ required: 'Password is required' }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
-                      className="signUpInputs focus:signUpInputs_Focused"
+                      className="signUpInputs "
                       placeholder="Enter your password"
                       onBlur={onBlur}
                       onChangeText={onChange}
@@ -275,7 +275,7 @@ const SignUpScreen = ({}: Props) => {
                   }}
                   render={({ field: { onChange, onBlur, value } }) => (
                     <Input
-                      className="signUpInputs focus:signUpInputs_Focused"
+                      className="signUpInputs "
                       placeholder="Confirm your password"
                       onBlur={onBlur}
                       onChangeText={onChange}

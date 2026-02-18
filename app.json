@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "SBCT SeQR Scan",
-    "slug": "sbct-seqr-scan",
+    "name": "Atriau SeQR Scan",
+    "slug": "atriau-seqr-scan",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/images/logos/icon.png",
@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.sbct.seqrscan",
+      "bundleIdentifier": "com.atriau.seqrscan",
       "entitlements": {
         "com.apple.developer.networking.wifi-info": true
       }
@@ -21,7 +21,7 @@
         "foregroundImage": "./src/assets/images/logos/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.sbct.seqrscan",
+      "package": "com.atriau.seqrscan",
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.READ_EXTERNAL_STORAGE",
@@ -83,9 +83,6 @@
     "extra": {
       "router": {
         "origin": false
-      },
-      "eas": {
-        "projectId": "65c150aa-521d-4a07-a3da-800895198b31"
       }
     }
   }
