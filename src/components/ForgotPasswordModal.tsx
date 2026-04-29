@@ -78,7 +78,7 @@ const ForgotPasswordModal = ({ visible, onClose }: Props) => {
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
-              className="signUpInputs focus:signUpInputs_Focused"
+              // className="signUpInputs focus:signUpInputs_Focused"
               placeholder="Enter your email"
               keyboardType="email-address"
               autoFocus
