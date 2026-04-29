@@ -4,102 +4,87 @@
 
 @layer base {
   :root {
-    /* ===== LIGHT MODE (Logo Based) ===== */
+    /* ===== LIGHT MODE ===== */
 
     --background: 0 0% 100%;
-    --foreground: 220 35% 20%;
-    /* Navy text */
+    --foreground: 220 40% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 35% 20%;
+    --card-foreground: 220 40% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 35% 20%;
+    --popover-foreground: 220 40% 18%;
 
-    /* Primary = Logo Blue */
-    --primary: 220 35% 20%;
+    /* 🔵 PRIMARY (Logo Blue) */
+    --primary: 215 75% 32%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary = Logo Green */
-    --secondary: 122 45% 48%;
+    /* 🔷 SECONDARY (Soft Blue) */
+    --secondary: 210 70% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent = Lighter Green */
-    --accent: 124 55% 60%;
-    --accent-foreground: 220 35% 20%;
+    /* 🟠 ACCENT (Sun Orange) */
+    --accent: 18 95% 55%;
+    --accent-foreground: 0 0% 100%;
 
+    /* Neutral UI */
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 40%;
 
-    --destructive: 0 70% 45%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
 
-    /* Focus Ring = Green */
-    --ring: 122 45% 48%;
+    /* Focus Ring */
+    --ring: 18 95% 55%;
   }
 
-  .dark:root {
-    /* ===== DARK MODE (Premium Look) ===== */
-
-    --background: 220 35% 10%;
-    /* Dark navy background */
-    --foreground: 0 0% 98%;
-
-    --card: 220 35% 14%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 220 35% 14%;
-    --popover-foreground: 0 0% 98%;
-
-    /* Blue stays primary */
-    --primary: 220 35% 25%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Green pops more in dark */
-    --secondary: 122 50% 50%;
-    --secondary-foreground: 0 0% 100%;
-
-    --accent: 124 60% 55%;
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 217 30% 20%;
-    --muted-foreground: 215 20% 70%;
-
-    --destructive: 0 60% 40%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 217 30% 20%;
-    --input: 217 30% 20%;
-
-    --ring: 122 50% 50%;
-  }
 }
 
 @layer components {
+  /* Labels */
   .signUpFormText {
     @apply text-base xs:text-lg font-semibold text-primary mb-1;
   }
 
+  /* Inputs */
   .signUpInputs {
-    @apply rounded-lg border border-input bg-background px-3 py-2 transition;
-  }
-
-  .primaryButton {
-    @apply bg-primary text-primary-foreground hover:brightness-110 active:scale-95 transition duration-200 rounded-lg px-4 py-2 font-medium;
+    @apply rounded-lg border border-input bg-background px-3 py-2 transition outline-none;
   }
 
   .signUpInputs_Focused {
-    @apply border-primary ring-2 ring-primary;
+    @apply border-primary ring-2 ring-ring;
   }
 
+  /* 🔵 Primary Button */
+  .primaryButton {
+    @apply text-primary-foreground rounded-lg px-4 py-2 font-medium transition duration-200 active:scale-95;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary))
+    );
+  }
+
+  /* 🔷 Secondary Button */
   .secondaryButton {
     @apply bg-secondary text-secondary-foreground hover:brightness-110 active:scale-95 transition duration-200 rounded-lg px-4 py-2 font-medium;
   }
 
+  /* 🟠 Accent Button (CTA) */
   .accentButton {
-    @apply bg-accent text-accent-foreground hover:brightness-110 transition rounded-lg px-4 py-2 font-medium;
+    @apply bg-accent text-accent-foreground hover:brightness-110 active:scale-95 transition duration-200 rounded-lg px-4 py-2 font-medium;
+  }
+
+  /* Card UI */
+  .cardUI {
+    @apply bg-card text-card-foreground border border-border rounded-xl p-4 shadow-sm;
+  }
+
+  /* Page container */
+  .pageContainer {
+    @apply bg-background text-foreground min-h-screen;
   }
 }
