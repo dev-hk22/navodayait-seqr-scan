@@ -32,9 +32,11 @@ const ForgotPasswordModal = ({ visible, onClose }: Props) => {
   });
 
   const [loading, setLoading] = useState<boolean>(false);
+  const [apiError, setApiError] = useState<string>("");
 
   const handlePasswordChange: SubmitHandler<ResetFormData | FieldValues> = async (formData) => {
     setLoading(true);
+    setApiError(""); // Clear previous API errors
 
     const passwordChangeFormData = new FormData();
     passwordChangeFormData.append("type", "forgotPassword");
@@ -46,14 +48,22 @@ const ForgotPasswordModal = ({ visible, onClose }: Props) => {
       const response = await axiosInstance.post(VERIFIER_RESET_PASSWORD, passwordChangeFormData);
 
       if (response.data.status !== 200) {
-        toast.show(response.data.message);
+        const errorMessage = response.data.message || response?.data?.errors?.email_id || "Something went wrong";
+        setApiError(errorMessage);
+        toast.show(errorMessage, {
+          type: 'danger'
+        });
       } else {
-        toast.show(response.data.message);
+        toast.show(response.data.message,{
+          type: 'success'
+        });
         onClose(); // close modal on success
       }
     } catch (error) {
       console.log("CATCH_ERROR_PASSWORD_CHANGE", error);
-      toast.show("Something went wrong. Please try again.");
+      const errorMessage = "Something went wrong. Please try again.";
+      setApiError(errorMessage);
+      toast.show(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -84,7 +94,10 @@ const ForgotPasswordModal = ({ visible, onClose }: Props) => {
               autoFocus
               value={value}
               onBlur={onBlur}
-              onChangeText={onChange}
+              onChangeText={(text) => {
+                onChange(text);
+                if (apiError) setApiError(""); // Clear API error on input change
+              }}
             />
           )}
         />
@@ -92,6 +105,12 @@ const ForgotPasswordModal = ({ visible, onClose }: Props) => {
         {errors.userEmail && (
           <Text className="text-destructive mt-1">
             {errors.userEmail.message}
+          </Text>
+        )}
+
+        {apiError && (
+          <Text className="text-destructive mt-1">
+            {apiError}
           </Text>
         )}
 
